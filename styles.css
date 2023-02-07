@@ -1,0 +1,160 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2a0056;
+  --gradient-north: #2f2b7d;
+  --gradient-south: #bd719b;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-gap: 48px;
+}
+
+aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, var(--gradient-north), var(--gradient-south));
+}
+
+aside .content {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  left: 0;
+}
+
+h1 {
+  font-family: 'Times New Roman', Gothic, serif;
+  color: #fff;
+  font-weight: 800;
+  font-size: 96px;
+  text-align: center;
+}
+
+.content p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  width: 100%;
+  padding: 24px;
+  max-width: 375px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cross {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cross::after,
+.cross::before {
+  content: '';
+  width: 100%;
+  height: 6px;
+  display: block;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+}
+
+.cross::after {
+  transform: translateY(-50%);
+}
+
+.cross::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.weeks {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 2.7rem;
+  padding: 48px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 18px;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 12px;
+}
+
+.week p {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.week ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 12px;
+  margin-top: 24px;
+  max-width: 450px;
+}
+
+.week li {
+  display: grid;
+  grid-template-columns: minmax(0, 60px) minmax(0, 1fr) minmax(0, max-content);
+  grid-gap: 12px;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 12px;
+}
+
+.week li span:first-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  grid-gap: 12px;
+  align-items: center;
+}
+
+.week li span:not(:first-child):not(:last-child) {
+  font-weight: 600;
+}
+
+.week li span:first-child::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  display: block;
+  border: 4px solid var(--primary);
+  border-radius: 50%;
+}
+
+.ash-wednesday span:first-child::before {
+  border-color: #666 !important;
+}
+
+.friday span:last-child {
+  color: #a00;
+}
+
+.friday span:first-child::before {
+  border-color: #a00 !important;
+}
